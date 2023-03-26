@@ -2,15 +2,17 @@ const Game = (() => {
   let gameboard = Array.from(Array(9));
   let turn = 0;
   let player;
+
+
   return {gameboard, turn, player}
 })();
 
 const displayController = (() => {
   const spot = document.querySelectorAll('.spot');  
-  spot.forEach(spot => spot.addEventListener('click', updateGame));
-  spot.forEach(spot => spot.addEventListener('click', x => {spot.textContent = `${Game.player}`}));
+  spot.forEach(spot => spot.addEventListener('click', updateGame, {once: true}));
+  spot.forEach(spot => spot.addEventListener('click', x => {spot.textContent = `${Game.player}`}, {once: true}));
   function updateGame(event) {
-    if (Game.turn % 2 == 0) {
+    if (Game.turn % 2) {
         Game.player = 'X'
     } else {
         Game.player = 'O'
