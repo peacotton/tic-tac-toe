@@ -9,16 +9,68 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    border: 5px solid black;
-    width: 80vw;
-    height: 80vh;
-    margin: 5vh;
+    width: 60vw;
+    height: 60vh;
+    margin: 20vh 20vw 10vh 20vw;
 }
 
+#clearBoard,
+#setNames {
+    height: 50px;
+    width: 75px;
+}
+
+#bottomdiv {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3,1fr);
+}
+
+#buttondiv {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
 .spot {
-    border: 1px solid red;
+    border: 2px solid black;
     display: grid;
     place-items: center;
     font-size: 3em;
     font-weight: bold;
+}
+
+#spot0,
+#spot1,
+#spot2 {
+    border-top: none;
+}
+
+#spot0,
+#spot3,
+#spot6 {
+    border-left: none;
+}
+
+#spot6,
+#spot7,
+#spot8 {
+    border-bottom: none;
+}
+
+#spot2,
+#spot5,
+#spot8 {
+    border-right: none;
+}
+
+#winner {
+    position: fixed;
+    display: none;
+    place-items: center;
+    width: 40vw;
+    height: 40vh;
+    top: 30vh;
+    left: 30vw;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    font-size: 5em;
 }
